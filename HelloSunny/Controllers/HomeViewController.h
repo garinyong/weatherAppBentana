@@ -9,6 +9,7 @@
 #import "BaseViewController.h"
 #import "WeatherDataEngine.h"
 #import "weatherInfoModel.h"
+#import "RoundMoveView.h"
 
 @interface HomeViewController : BaseViewController
 {
@@ -16,6 +17,8 @@
     CAEmitterLayer *snowEmitter;   //下雪层
     UIImageView *sunnyView;        //sunny
     UIImageView *cloudyView;        //cloudy
+    RoundMoveView *rmv;
+    NSDictionary *cityData;
     
     WeatherDataEngine *wde;
     

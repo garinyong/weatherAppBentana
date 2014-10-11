@@ -10,22 +10,26 @@
 	<string>HelloSunny</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>44EFDDD4539D47D5939CF1A1CD43AE325A798946</key>
+		<string>https://github.com/garinyong/weatherAppBentana.git</string>
 		<key>95DE36B5FDBE702DEEF4F880A142006787F85E21</key>
 		<string>https://github.com/gaofannmg/weatherApp.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>HelloSunny.xcodeproj/project.xcworkspace</string>
+	<string>HelloSunny.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>95DE36B5FDBE702DEEF4F880A142006787F85E21</key>
+		<key>44EFDDD4539D47D5939CF1A1CD43AE325A798946</key>
 		<string>../..</string>
+		<key>95DE36B5FDBE702DEEF4F880A142006787F85E21</key>
+		<string>../../../weatherApp</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>https://github.com/gaofannmg/weatherApp.git</string>
+	<string>https://github.com/garinyong/weatherAppBentana.git</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>95DE36B5FDBE702DEEF4F880A142006787F85E21</string>
+	<string>44EFDDD4539D47D5939CF1A1CD43AE325A798946</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
@@ -35,6 +39,14 @@
 			<string>95DE36B5FDBE702DEEF4F880A142006787F85E21</string>
 			<key>IDESourceControlWCCName</key>
 			<string>weatherApp</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>44EFDDD4539D47D5939CF1A1CD43AE325A798946</string>
+			<key>IDESourceControlWCCName</key>
+			<string>weatherAppBentana</string>
 		</dict>
 	</array>
 </dict>

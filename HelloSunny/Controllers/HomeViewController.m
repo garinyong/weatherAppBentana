@@ -20,16 +20,79 @@
     
 //    _contentView.contentSize= CGSizeMake(self.view.frame.size.width, self.view.frame.size.height);
     
+    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"citycode" ofType:@"plist"];
+    cityData = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
+    
+    _cityBtn.hidden = YES;
+    
     _contentBgView.clipsToBounds = YES;
     [_cityBtn addTarget:self action:@selector(btnclick) forControlEvents:UIControlEventTouchUpInside];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(getLocationSuccess:) name:NOTIFICATION_GetCityArera object:nil];
     
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(getLocationFail) name:NOTIFICATION_FAILGETPOSITIONCITY object:nil];
     
+    rmv = [[RoundMoveView alloc] initWithFrame:CGRectMake(0, 30, self.view.bounds.size.width, 50) expandType_:Right];
+    
+    __weak RoundMoveView *weakRmv = rmv;
+    __weak HomeViewController *weakSelf = self;
+    
+    rmv.curSelectItemBlock = ^(NSString *selectCity_)
+    {
+        if ([selectCity_ isEqualToString:@"select city list"])
+        {
+            [weakSelf btnclick];
+        }
+        else
+        {
+            NSMutableArray *newCityList = [weakSelf getCityTitleList:selectCity_];
+            [weakRmv setTitleList:newCityList];
+        }
+    };
+    
+    [self.view addSubview:rmv];
+    
     picWidth = 1024;
     picHeight = 348;
     
     [self setGPS];
+}
+
+-(NSMutableArray *) getCityTitleList:(NSString *) selectCity
+{
+    NSMutableArray *arr = [NSMutableArray array];
+    
+    int addCount = 0;
+    
+    NSDictionary *findCity = nil;
+    
+    for (NSArray *temDict in cityData.allValues)
+    {
+        for (NSDictionary *di in temDict)
+        {
+            if (addCount < 3)
+            {
+                [arr addObject:di];
+                addCount ++;
+            }
+            
+            NSString *tempCityName = [di safeObjectForKey:@"sName"];
+            
+            if (STRINGHASVALUE(tempCityName)&&[tempCityName isEqualToString:selectCity])
+            {
+                findCity = di;
+            }
+        }
+    }
+    
+    //更多
+    [arr addObject:[NSDictionary dictionaryWithObjectsAndKeys:@"更多",@"sName", nil]];
+    
+    if (DICTIONARYHASVALUE(findCity))
+    {
+        [arr addObject:findCity];
+    }
+
+    return arr;
 }
 
 -(void) btnclick{
@@ -52,8 +115,7 @@
     GPSInfo *gpsInfo = [notification object];
     if (STRINGHASVALUE(gpsInfo.shortCityName)) {
         NSLog(@"%@",gpsInfo.shortCityName);
-            
-
+        
         NSString *cityCode = [self getCityID:gpsInfo.shortCityName];
             
         [self updateUIByNet:cityCode cityName:gpsInfo.shortCityName];
@@ -97,6 +159,9 @@
         
         [self setbgViewByState:data.weather];
         
+        NSMutableArray *newCityList = [self getCityTitleList:cityName];
+        [rmv setTitleList:newCityList];
+        
     } errorHandler:^(NSError *error) {
         
     } cityid:citycode];
@@ -136,10 +201,7 @@
 
 -(NSString *) getCityID:(NSString *) cityName
 {
-    NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"citycode" ofType:@"plist"];
-    NSDictionary *data = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
-    
-    for (NSArray *temDict in data.allValues) {
+    for (NSArray *temDict in cityData.allValues) {
         
         for (NSDictionary *di in temDict) {
          
@@ -348,5 +410,8 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark -- RoundView Setting
+
 
 @end

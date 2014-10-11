@@ -16,4 +16,8 @@ typedef void (^CurResponseBlock)(NSDictionary * dict);
                           errorHandler:(MKNKErrorBlock) errorBlock
                                 cityid:(NSString *) cityid;
 
+
+-(MKNetworkOperation *) getCurentWeatherInfo:(CurResponseBlock) completionBlock
+                                errorHandler:(MKNKErrorBlock) errorBlock
+                                      cityid:(NSString *) cityid;
 @end
