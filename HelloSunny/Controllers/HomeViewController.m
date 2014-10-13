@@ -23,33 +23,11 @@
     NSString *plistPath = [[NSBundle mainBundle] pathForResource:@"citycode" ofType:@"plist"];
     cityData = [[NSDictionary alloc] initWithContentsOfFile:plistPath];
     
-    _cityBtn.hidden = YES;
-    
     _contentBgView.clipsToBounds = YES;
     [_cityBtn addTarget:self action:@selector(btnclick) forControlEvents:UIControlEventTouchUpInside];
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(getLocationSuccess:) name:NOTIFICATION_GetCityArera object:nil];
     
     [[NSNotificationCenter defaultCenter]  addObserver:self selector:@selector(getLocationFail) name:NOTIFICATION_FAILGETPOSITIONCITY object:nil];
-    
-    rmv = [[RoundMoveView alloc] initWithFrame:CGRectMake(0, 30, self.view.bounds.size.width, 50) expandType_:Right];
-    
-    __weak RoundMoveView *weakRmv = rmv;
-    __weak HomeViewController *weakSelf = self;
-    
-    rmv.curSelectItemBlock = ^(NSString *selectCity_)
-    {
-        if ([selectCity_ isEqualToString:@"select city list"])
-        {
-            [weakSelf btnclick];
-        }
-        else
-        {
-            NSMutableArray *newCityList = [weakSelf getCityTitleList:selectCity_];
-            [weakRmv setTitleList:newCityList];
-        }
-    };
-    
-    [self.view addSubview:rmv];
     
     picWidth = 1024;
     picHeight = 348;
@@ -158,9 +136,6 @@
         _timeDesp.text = [NSString stringWithFormat:@"国家气象局%@发布",data.ptime];
         
         [self setbgViewByState:data.weather];
-        
-        NSMutableArray *newCityList = [self getCityTitleList:cityName];
-        [rmv setTitleList:newCityList];
         
     } errorHandler:^(NSError *error) {
         
@@ -410,8 +385,6 @@
     // Pass the selected object to the new view controller.
 }
 */
-
-#pragma mark -- RoundView Setting
 
 
 @end

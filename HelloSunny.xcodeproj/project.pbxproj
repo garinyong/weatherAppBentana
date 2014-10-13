@@ -50,8 +50,6 @@
 		96E591F9196699CD00496B9E /* WeatherTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E591F7196699CD00496B9E /* WeatherTableViewCell.m */; };
 		96E75995191A2B16003A9BA6 /* SafeClassMethod.m in Sources */ = {isa = PBXBuildFile; fileRef = 96E75994191A2B16003A9BA6 /* SafeClassMethod.m */; };
 		96EC6DB11910FF6E000FEA10 /* WeatherDataEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 96EC6DB01910FF6E000FEA10 /* WeatherDataEngine.m */; };
-		EE65896B19E8DA55004BF7F8 /* RoundBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = EE65896A19E8DA55004BF7F8 /* RoundBtn.m */; };
-		EE65896E19E8DD44004BF7F8 /* RoundMoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = EE65896D19E8DD44004BF7F8 /* RoundMoveView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,10 +128,6 @@
 		96E75994191A2B16003A9BA6 /* SafeClassMethod.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SafeClassMethod.m; sourceTree = "<group>"; };
 		96EC6DAF1910FF6E000FEA10 /* WeatherDataEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeatherDataEngine.h; sourceTree = "<group>"; };
 		96EC6DB01910FF6E000FEA10 /* WeatherDataEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeatherDataEngine.m; sourceTree = "<group>"; };
-		EE65896919E8DA55004BF7F8 /* RoundBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundBtn.h; sourceTree = "<group>"; };
-		EE65896A19E8DA55004BF7F8 /* RoundBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundBtn.m; sourceTree = "<group>"; };
-		EE65896C19E8DD44004BF7F8 /* RoundMoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RoundMoveView.h; sourceTree = "<group>"; };
-		EE65896D19E8DD44004BF7F8 /* RoundMoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RoundMoveView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -375,10 +369,6 @@
 				96E591F41966951200496B9E /* WeatherTableViewCell.xib */,
 				96E591F6196699CD00496B9E /* WeatherTableViewCell.h */,
 				96E591F7196699CD00496B9E /* WeatherTableViewCell.m */,
-				EE65896919E8DA55004BF7F8 /* RoundBtn.h */,
-				EE65896A19E8DA55004BF7F8 /* RoundBtn.m */,
-				EE65896C19E8DD44004BF7F8 /* RoundMoveView.h */,
-				EE65896D19E8DD44004BF7F8 /* RoundMoveView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,7 +449,6 @@
 				96B730CA18FE543F0083406A /* NSDictionary+RequestEncoding.m in Sources */,
 				96E31BC91906673F0053E8BE /* BaseModel.m in Sources */,
 				96B730CB18FE543F0083406A /* NSString+MKNetworkKitAdditions.m in Sources */,
-				EE65896B19E8DA55004BF7F8 /* RoundBtn.m in Sources */,
 				96B730CC18FE543F0083406A /* UIAlertView+MKNetworkKitAdditions.m in Sources */,
 				96B7308818FE52C20083406A /* AppDelegate.m in Sources */,
 				96B730CF18FE543F0083406A /* MKNetworkOperation.m in Sources */,
@@ -467,7 +456,6 @@
 				96B730EC18FFA0820083406A /* UIImage+ext.m in Sources */,
 				96B730FA18FFB83D0083406A /* AppPrepareTool.m in Sources */,
 				9611378C18FFBE63008AC9C9 /* UINavigationBar+ext.m in Sources */,
-				EE65896E19E8DD44004BF7F8 /* RoundMoveView.m in Sources */,
 				96B730CD18FE543F0083406A /* UIImageView+MKNetworkKitAdditions.m in Sources */,
 				96B730E218FF73640083406A /* CommonHelper.m in Sources */,
 				96604F591904B59700EA899A /* WeatherInfoModel.m in Sources */,
